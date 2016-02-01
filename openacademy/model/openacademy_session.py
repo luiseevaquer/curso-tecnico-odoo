@@ -13,6 +13,11 @@ class Session(models.Model):
     seats = fields.Integer(string="Number of seats")
     active = fields.Boolean(default=True)
     color = fields.Integer()
+    state = fields.Selection([
+                              ('draft', "Draft"),
+                              ('confirmed', "Confirmed"),
+                              ('done', "Done"), 
+                             ], default='draft')
 
     instructor_id = fields.Many2one('res.partner', string="Instructor",
         domain=['|', ('instructor', '=', True),
@@ -93,6 +98,18 @@ class Session(models.Model):
     @api.depends('attendee_ids')
     def _get_attendees_count(self):
         self.attendees_count = len(self.attendee_ids)
+
+    @api.one
+    def action_draft(self):
+        self.state = 'draft'
+
+    @api.one
+    def action_confirm(self):
+        self.state = 'confirmed'
+
+    @api.one
+    def action_done(self):
+        self.state = 'done'
 
     @api.one
     @api.constrains('instructor_id', 'attendee_ids')
