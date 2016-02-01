@@ -17,7 +17,7 @@ class Session(models.Model):
                               ('draft', "Draft"),
                               ('confirmed', "Confirmed"),
                               ('done', "Done"), 
-                             ], default='draft')
+                             ])
 
     instructor_id = fields.Many2one('res.partner', string="Instructor",
         domain=['|', ('instructor', '=', True),

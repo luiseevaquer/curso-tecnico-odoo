@@ -22,6 +22,7 @@
         'view/openacademy_course_view.xml',
         'view/openacademy_session_view.xml',
         'view/partner_view.xml',
+        'workflow/session_workflow.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
