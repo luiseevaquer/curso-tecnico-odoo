@@ -27,7 +27,7 @@ msgstr "<p class=\"oe_view_nocontent_create\">Create the first course\n"
 #. module: openacademy
 #: field:openacademy.session,active:0
 msgid "Active"
-msgstr "Active"
+msgstr "Activo"
 
 #. module: openacademy
 #: model:ir.actions.act_window,name:openacademy.launch_session_wizard
@@ -127,7 +127,7 @@ msgstr "Delete"
 #: view:openacademy.course:openacademy.course_form_view
 #: field:openacademy.course,description:0
 msgid "Description"
-msgstr "Description"
+msgstr "Descripción"
 
 #. module: openacademy
 #: selection:openacademy.session,state:0
